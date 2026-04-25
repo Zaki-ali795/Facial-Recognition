@@ -168,16 +168,16 @@ def save_preprocessed_data(X_train, y_train, X_val, y_val, X_test, y_test):
     Save preprocessed data to numpy files for faster loading later
     """
     # Create preprocessed directory if it doesn't exist
-    os.makedirs('../data/preprocessed', exist_ok=True)
+    os.makedirs('../../data/preprocessed', exist_ok=True)
 
     print("\n💾 Saving preprocessed data...")
 
-    np.save('../data/preprocessed/X_train.npy', X_train)
-    np.save('../data/preprocessed/y_train.npy', y_train)
-    np.save('../data/preprocessed/X_val.npy', X_val)
-    np.save('../data/preprocessed/y_val.npy', y_val)
-    np.save('../data/preprocessed/X_test.npy', X_test)
-    np.save('../data/preprocessed/y_test.npy', y_test)
+    np.save('../../data/preprocessed/X_train.npy', X_train)
+    np.save('../../data/preprocessed/y_train.npy', y_train)
+    np.save('../../data/preprocessed/X_val.npy', X_val)
+    np.save('../../data/preprocessed/y_val.npy', y_val)
+    np.save('../../data/preprocessed/X_test.npy', X_test)
+    np.save('../../data/preprocessed/y_test.npy', y_test)
 
     print("   ✅ Data saved to data/preprocessed/")
     print("   Files:")
@@ -191,12 +191,12 @@ def load_preprocessed_data():
     Load preprocessed data if it exists (much faster than reprocessing)
     """
     try:
-        X_train = np.load('../data/preprocessed/X_train.npy')
-        y_train = np.load('../data/preprocessed/y_train.npy')
-        X_val = np.load('../data/preprocessed/X_val.npy')
-        y_val = np.load('../data/preprocessed/y_val.npy')
-        X_test = np.load('../data/preprocessed/X_test.npy')
-        y_test = np.load('../data/preprocessed/y_test.npy')
+        X_train = np.load('../../data/preprocessed/X_train.npy')
+        y_train = np.load('../../data/preprocessed/y_train.npy')
+        X_val = np.load('../../data/preprocessed/X_val.npy')
+        y_val = np.load('../../data/preprocessed/y_val.npy')
+        X_test = np.load('../../data/preprocessed/X_test.npy')
+        y_test = np.load('../../data/preprocessed/y_test.npy')
 
         print("✅ Loaded preprocessed data from disk")
         return (X_train, y_train), (X_val, y_val), (X_test, y_test)
